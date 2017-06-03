@@ -1,0 +1,12 @@
+[package]
+name = "rpgserver"
+version = "0.1.0"
+authors = ["Szabó Mátyás <szabogmatyas@yahoo.com>"]
+
+[dependencies]
+rand = "0"
+serde = "1"
+serde_derive = "1"
+serde_json = "1"
+ws = "0"
+
