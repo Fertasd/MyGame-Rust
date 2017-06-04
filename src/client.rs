@@ -6,7 +6,7 @@ use ws;
 pub fn connect(address: net::SocketAddr) {
 	let address_str = String::from("ws://") + &address.to_string();
 	if let Err(error) = ws::connect(address_str.deref(), |sender| Client::new(sender)) {
-		println!("Error with clinet connection {}\n{}", address_str, error)
+		println!("Error with client connection {}\n{}", address_str, error)
 	}
 }
 

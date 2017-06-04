@@ -57,7 +57,7 @@ impl Server {
 				let _ = broadcaster.shutdown();
 			}
 		});
-		Server { listener: listener, shutdown_transmitter: tx }
+		Server { listener, shutdown_transmitter: tx }
 	}
 	fn get_stopper(&self) -> Stopper {
 		Stopper { tx: self.shutdown_transmitter.clone() }

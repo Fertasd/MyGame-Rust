@@ -2,7 +2,9 @@ extern crate futures;
 extern crate ws;
 
 mod area;
+mod characters;
 mod client;
+mod items;
 mod server;
 
 use std::env;
