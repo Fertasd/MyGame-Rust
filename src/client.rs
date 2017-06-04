@@ -5,16 +5,18 @@ use ws;
 
 pub fn connect(address: net::SocketAddr) {
 	let address_str = String::from("ws://") + &address.to_string();
-	if let Err(error) = ws::connect(address_str.deref(), |_| Client::new()) {
+	if let Err(error) = ws::connect(address_str.deref(), |sender| Client::new(sender)) {
 		println!("Error with clinet connection {}\n{}", address_str, error)
 	}
 }
 
-struct Client;
+struct Client {
+	sender: ws::Sender
+}
 
 impl Client {
-	fn new() -> Client {
-		Client {}
+	fn new(sender: ws::Sender) -> Client {
+		Client { sender }
 	}
 }
 
