@@ -1,22 +1,21 @@
+use std::net;
 use std::net::IpAddr;
+use std::ops::Deref;
 use ws;
 
-pub struct NetworkClient {
-	sender: ws::Sender
-}
-
-impl NetworkClient {
-	pub fn connect(address: IpAddr, function: FnOnce(NetworkClient)) {
-		let mut socket = ws::WebSocket::new(client).unwrap();
-		socket.connect(address.into()).unwrap();
-		function(socket.r)
+pub fn connect(address: net::SocketAddr) {
+	let address_str = String::from("ws://") + &address.to_string();
+	if let Err(error) = ws::connect(address_str.deref(), |_| Client::new()) {
+		println!("Error connecting to {}\n{}", address_str, error)
 	}
 }
 
-impl ws::Factory for NetworkClient {
-	type Handler = Self;
+struct Client;
 
-	fn connection_made(&mut self, sender: ws::Sender) -> Self::Handler {
-		NetworkClient { sender: sender }
+impl Client {
+	fn new() -> Client {
+		Client {}
 	}
 }
+
+impl ws::Handler for Client {}

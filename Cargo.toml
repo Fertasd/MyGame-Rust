@@ -1,7 +1,10 @@
 [package]
 name = "rpg-game"
 version = "0.1.0"
-authors = ["Szabó Mátyás <szabogmatyas@yahoo.com>"]
+authors = [
+	"Szabó Attila <neyo8826@gmail.com>",
+	"Szabó Mátyás <szabogmatyas@yahoo.com>"
+]
 
 [dependencies]
 rand = "0"

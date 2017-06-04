@@ -45,11 +45,8 @@ impl Level {
 	}
 }
 
-impl Place for Level {
-}
+impl Place for Level {}
 
-pub struct Room {
-}
+pub struct Room {}
 
-impl Place for Room {
-}
+impl Place for Room {}
