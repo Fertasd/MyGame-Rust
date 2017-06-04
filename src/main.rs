@@ -1,9 +1,15 @@
+extern crate ctrlc;
+extern crate rand;
 extern crate futures;
 extern crate ws;
 
 mod area;
+#[allow(dead_code)]
+mod atomic;
 mod characters;
 mod client;
+#[macro_use]
+mod error;
 mod items;
 mod server;
 

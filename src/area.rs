@@ -1,6 +1,4 @@
-extern crate rand;
-
-use std::cell::RefCell;
+use rand;
 use std::collections::HashMap;
 use std::rc::Rc;
 

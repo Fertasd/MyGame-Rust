@@ -7,6 +7,7 @@ authors = [
 ]
 
 [dependencies]
+ctrlc = "3"
 futures = "0"
 rand = "0"
 serde = "1"
