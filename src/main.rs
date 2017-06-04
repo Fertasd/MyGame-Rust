@@ -1,9 +1,17 @@
-extern crate rand;
+extern crate ws;
 
-mod server;
+mod area;
+//mod client;
 
-use std::io::stdin;
+use area::*;
+use std::net::IpAddr;
+use std::rc::Rc;
+use std::str::FromStr;
 
 fn main() {
+	//let c = client::NetworkClient::connect(IpAddr::from_str("192.168.10.1:1600").unwrap());
 
+	let mut d = Dungeon::new();
+	let l = Level::new();
+	d.add_level(Rc::new(l));
 }
